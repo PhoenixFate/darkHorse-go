@@ -23,4 +23,8 @@ func main() {
 	c := 40
 	fmt.Println("a=", a, " b=", b, " c=", c)
 	fmt.Printf("a=%d b=%d c=%d \n", a, b, c)
+
+	var d = 50
+	fmt.Printf("d type: %T\n", d)
+	fmt.Printf("d=%d\n", d)
 }
