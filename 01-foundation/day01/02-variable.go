@@ -27,7 +27,4 @@ func main() {
 	//%T 变量所属的类型
 	fmt.Printf("c type is %T\n", e)
 
-
-
-
 }

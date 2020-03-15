@@ -34,8 +34,8 @@ func main() {
 
 	//自动推导类型
 	var (
-		g1 =20
-		g2 =23.2
+		g1 = 20
+		g2 = 23.2
 	)
 	fmt.Printf("g1: %d; g2: %f\n", g1, g2)
 
@@ -51,8 +51,5 @@ func main() {
 		j2 = 56.34
 	)
 	fmt.Printf("j1:%d; j2:%f\n", j1, j2)
-
-
-
 
 }
