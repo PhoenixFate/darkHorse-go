@@ -11,6 +11,10 @@ func main() {
 		a := 10
 		fmt.Println("a=", a)
 	}
+	{
+		a := 10
+		fmt.Println("a=", a)
+	}
 	//fmt.Println("a=",a)
 	fmt.Println("global: ", global10)
 
