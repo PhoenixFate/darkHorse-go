@@ -28,5 +28,11 @@ func main() {
 	b6 := a <= b
 	fmt.Printf("b1:%v; b2:%v; b3:%v; b4:%v; b5:%v; b6:%v", b1, b2, b3, b4, b5, b6)
 
+	//非0就是真
+	c1 := b1 && b2
+	c2 := b1 || b2
+	c3 := !b1
+	fmt.Printf("c1=%v; c2=%v; c3=%v", c1, c2, c3)
+
 	fmt.Println("16")
 }
