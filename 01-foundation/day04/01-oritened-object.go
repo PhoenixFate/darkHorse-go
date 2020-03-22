@@ -32,6 +32,7 @@ func main() {
 	fmt.Printf("%+v\n", s2)
 	//指定成员初始化
 	s3 := Student{id: 9999}
+	s3.Person.name = "person name"
 	s3.Person = Person{"微软", 2, 239}
 	fmt.Printf("%+v\n", s3)
 
