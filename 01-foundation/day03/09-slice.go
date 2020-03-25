@@ -11,7 +11,11 @@ func main() {
 	//cap容量 max-low
 
 	a := [5]int{1, 2, 3, 4, 5}
+	fmt.Printf("a type: %T\n", a)
 	s := a[0:3:5]
+	fmt.Println("s= ", s)
+	fmt.Printf("s type: %T\n", s)
+	a[0] = 9
 	fmt.Println("s= ", s)
 	fmt.Println("len: ", len(s))
 	fmt.Println("cap: ", cap(s))
@@ -54,6 +58,7 @@ func main() {
 	//s[low:high:max]
 
 	myArray := []int{1, 2, 3, 4, 5, 6, 7}
+	fmt.Printf("myArray type: %T\n", myArray)
 	s5 := myArray[:]
 	fmt.Printf("len=%d, cap=%d, s5:%v\n", len(s5), cap(s5), s5)
 	s6 := myArray[0]
