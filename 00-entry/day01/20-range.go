@@ -10,5 +10,11 @@ func main() {
 		fmt.Printf("str[%d]=%c\n", i, data)
 	}
 
+	arr := []int{12, 22, 32, 42}
+	fmt.Println(arr)
+	for data := range arr {
+		fmt.Println(data)
+	}
+
 	fmt.Println("20 range")
 }
