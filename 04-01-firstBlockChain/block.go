@@ -3,6 +3,7 @@ package main
 import (
 	"crypto/sha256"
 	"fmt"
+	"reflect"
 )
 
 //1. 定义区块结构
@@ -22,6 +23,7 @@ func NewBlock(data string, prevBlockHash []byte) *Block {
 		Hash:     []byte{}, //先空，后面计算hash  //TODO
 		Data:     []byte(data),
 	}
+	fmt.Println("block type: ", reflect.TypeOf(block))
 	block.SetHash()
 
 	return &block
@@ -34,11 +36,4 @@ func (block *Block) SetHash() {
 	//2.sha256
 	hash := sha256.Sum256(blockInfo)
 	block.Hash = hash[:]
-}
-
-func main() {
-	block := NewBlock("送给你一枚比特币", []byte{})
-	fmt.Printf("前区块哈希值：%x\n", block.PrevHash)
-	fmt.Printf("当前区块哈希值： %x\n", block.Hash)
-	fmt.Printf("区块数据： %s\n", block.Data)
 }
