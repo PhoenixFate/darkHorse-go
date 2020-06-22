@@ -16,7 +16,7 @@ func main() {
 	go NewRoutine()
 
 	for i := 0; i < 5; i++ {
-		fmt.Println("main routine")
+		fmt.Println("04-01-firstBlockChain routine")
 		time.Sleep(time.Second)
 	}
 

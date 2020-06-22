@@ -4,7 +4,7 @@ import "os"
 import "fmt"
 
 //在终端调用该文件
-//go run 09-main-args.go a mike
+//go run 09-04-01-firstBlockChain-args.go a mike
 func main() {
 
 	//接受用户传递过来的参数，都是以字符串传递过来的

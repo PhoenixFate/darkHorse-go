@@ -16,7 +16,7 @@ func main() {
 	for i := 0; i < 5; i++ {
 		//让出时间片
 		runtime.Gosched()
-		fmt.Println("main routine ", i)
+		fmt.Println("04-01-firstBlockChain routine ", i)
 	}
 	//runtime.Gosched()
 	fmt.Println("02 gosched 让出时间片")
