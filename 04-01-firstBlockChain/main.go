@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 //cd 04-00-block-chain/04-01-firstBlockChain
 //go run *.go
@@ -14,4 +16,6 @@ func main() {
 		fmt.Printf("当前区块哈希值： %x\n", block.Hash)
 		fmt.Printf("区块数据： %s\n", block.Data)
 	}
+	var s string
+	fmt.Scanf("%s", s)
 }

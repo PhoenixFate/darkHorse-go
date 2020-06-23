@@ -1,9 +1,18 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
+//mac/linux 下面
 //cd 04-00-block-chain/04-01-firstBlockChain
 //go run *.go
+
+//windows下面编译运行
+//go build
+//start xxx.exe
+//记得代码后面+ time.Sleep(time.Second*100) or fmt.Scanf()
 
 func main() {
 	blockChain := NewBlockChain()
@@ -14,4 +23,5 @@ func main() {
 		fmt.Printf("当前区块哈希值： %x\n", block.Hash)
 		fmt.Printf("区块数据： %s\n", block.Data)
 	}
+	time.Sleep(time.Second * 100)
 }
