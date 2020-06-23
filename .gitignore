@@ -4,3 +4,4 @@ null
 out
 target
 .DS_STORE
+*.exe
