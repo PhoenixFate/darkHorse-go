@@ -70,7 +70,6 @@ func (block *Block) SetHash() {
 		block.MerkelRoot,
 		Uint64ToByte(block.TimeStamp),
 		Uint64ToByte(block.Difficulty),
-		block.Hash,
 		block.Data,
 	}
 	//将一个二维的切片连接起来，生成一唯的切片
