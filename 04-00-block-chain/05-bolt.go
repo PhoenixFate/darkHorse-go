@@ -2,6 +2,7 @@ package main
 
 //bolt 数据库
 //记得要配置goPath
+//go get github.com/boltdb/bolt/...
 import (
 	"fmt"
 	"github.com/boltdb/bolt"
