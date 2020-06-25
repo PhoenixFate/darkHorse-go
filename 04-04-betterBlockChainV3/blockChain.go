@@ -31,7 +31,7 @@ func NewBlockChain() *BlockChain {
 	var lastHash []byte //最后一个区块的hash
 
 	//2.找到抽屉bucket，如果没有则创建
-	db.Update(func(tx *bolt.Tx) error {
+	_ = db.Update(func(tx *bolt.Tx) error {
 		//tx 事务
 		// Returns nil if the bucket does not exist.
 		bucket := tx.Bucket([]byte(blockBucket))
@@ -45,8 +45,8 @@ func NewBlockChain() *BlockChain {
 			//创建一个创世块，并作为第一个区块添加到区块链中
 			genesisBlock := GenesisBlock()
 			//hash作为key，block的字节流作为value
-			bucket.Put(genesisBlock.Hash, genesisBlock.Serialize())
-			bucket.Put([]byte("lastHashKey"), genesisBlock.Hash)
+			_ = bucket.Put(genesisBlock.Hash, genesisBlock.Serialize())
+			_ = bucket.Put([]byte("lastHashKey"), genesisBlock.Hash)
 			lastHash = genesisBlock.Hash
 		} else {
 			lastHash = bucket.Get([]byte("lastHashKey"))
@@ -66,8 +66,7 @@ func (blockChain *BlockChain) AddBlock(data string) {
 	//获得最后一个区块的hash
 	db := blockChain.db
 	lastHash := blockChain.tail
-
-	db.Update(func(tx *bolt.Tx) error {
+	_ = db.Update(func(tx *bolt.Tx) error {
 		//tx 事务
 		// Returns nil if the bucket does not exist.
 		bucket := tx.Bucket([]byte(blockBucket))
@@ -77,10 +76,9 @@ func (blockChain *BlockChain) AddBlock(data string) {
 		//6.1创建新的区块
 		block := NewBlock(data, lastHash)
 		//6.2添加到区块链数据中
-		bucket.Put(block.Hash, block.Serialize())
-		bucket.Put([]byte("LastHashKey"), block.Hash)
+		_ = bucket.Put(block.Hash, block.Serialize())
+		_ = bucket.Put([]byte("lastHashKey"), block.Hash)
 		blockChain.tail = block.Hash
-
 		return nil
 	})
 }
