@@ -3,9 +3,18 @@ package main
 import (
 	"crypto/sha256"
 	"fmt"
-	"log"
 	"reflect"
 )
+
+type Test struct {
+	name string
+	age  int
+}
+
+func testParameter(t Test) {
+	fmt.Printf("test address:%p\n", &t)
+	fmt.Printf("name address: %p\n", &t.name)
+}
 
 func main() {
 	b := make([]byte, 10)
@@ -28,5 +37,11 @@ func main() {
 	//对于任意长度的消息，SHA256都会产生一个256bit长的哈希值，称作消息摘要。
 	//这个摘要相当于是个长度为32个字节的数组，通常用一个长度为64的十六进制字符串来表示
 	fmt.Printf("hash: %x\n", hash)
-	log.Panic("log panic test")
+
+	t := Test{name: "abc", age: 20}
+	fmt.Printf("t address: %p\n", &t)
+	fmt.Printf("name address: %p\n", &t.name)
+	testParameter(t)
+
+	//log.Panic("log panic test")
 }
