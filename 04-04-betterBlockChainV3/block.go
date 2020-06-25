@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"encoding/binary"
+	"encoding/gob"
 	"log"
 	"time"
 )
@@ -26,9 +27,30 @@ type Block struct {
 	Data []byte
 }
 
-func (b *Block) toByte() []byte {
+func (block *Block) Serialize() []byte {
+	var buffer bytes.Buffer
+	//使用gob进行序列化（编码）得到字节流
+	//1.定义一个编码器
+	//2.使用编码器进行编码
+	encoder := gob.NewEncoder(&buffer)
+	encodeError := encoder.Encode(&block)
+	if encodeError != nil {
+		log.Panic("编码block失败", encodeError)
+	}
+	return buffer.Bytes()
+}
 
-	return []byte{}
+func Deserialize(data []byte) *Block {
+	//使用gob进行序列化（解码）得到Person结构
+	//1.定义一个解码器
+	//2.使用编码器进行编码
+	decoder := gob.NewDecoder(bytes.NewReader(data))
+	var block Block
+	decodeError := decoder.Decode(&block)
+	if decodeError != nil {
+		log.Panic("解码block失败", decodeError)
+	}
+	return &block
 }
 
 //2.创建区块
