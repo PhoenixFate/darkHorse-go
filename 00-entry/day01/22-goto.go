@@ -14,5 +14,15 @@ func main() {
 End:
 	fmt.Println("3333")
 
+	for i := 0; i < 5; i++ {
+		for {
+			fmt.Println(i)
+			goto LABEL
+		}
+	}
+	fmt.Println("this is test")
+LABEL:
+	fmt.Println("this is over")
+
 	fmt.Println("22 goto")
 }

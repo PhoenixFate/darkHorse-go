@@ -3,7 +3,6 @@ package main
 import "fmt"
 
 func MyRecursion(a int) {
-
 	if a == 1 {
 		fmt.Println("a=", a)
 		return

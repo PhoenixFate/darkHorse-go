@@ -3,27 +3,26 @@ package main
 import "fmt"
 
 func main() {
+	//slice和数组的区别：声明数组时，方括号内写明了数组的长度或使用...自动计算长度，而声明slice时，方括号内没有任何字符。
 
 	//[low:high:max]
 	//low 下标起点
 	//high 下标终点（不包括）
 	//len=high-low 长度
 	//cap容量 max-low
-
-	a := [5]int{1, 2, 3, 4, 5}
+	//[...]、[常量]这样是组数
+	//[]这样是切片
+	a := [...]int{1, 2, 3, 4, 5}
 	fmt.Printf("a type: %T\n", a)
 	s := a[0:3:5]
 	fmt.Println("s= ", s)
 	fmt.Printf("s type: %T\n", s)
 	a[0] = 9
 	fmt.Println("s= ", s)
-	fmt.Println("len: ", len(s))
-	fmt.Println("cap: ", cap(s))
-
-	s = a[1:4:5]
-	fmt.Println("s= ", s)
-	fmt.Println("len: ", len(s))
-	fmt.Println("cap: ", cap(s))
+	fmt.Println("s len: ", len(s))
+	fmt.Println("s cap: ", cap(s))
+	ab := a[:] //将一个数组转成切片
+	fmt.Printf("ab type:%T\n", ab)
 
 	//数组和切片的区别
 	//数组不能改变长度 []里面必须是固定值
@@ -31,10 +30,11 @@ func main() {
 	fmt.Println("len b: ", len(b))
 	fmt.Println("cap b: ", cap(b))
 
-	//切片 []里面为空，或者...
+	//切片 []里面为空
 	var s2 []int
 	fmt.Println("len s2: ", len(s2))
 	fmt.Println("cap s2: ", cap(s2))
+	//append函数向 slice 尾部添加数据，返回新的 slice 对象：
 	s2 = append(s2, 22)
 	fmt.Println("len s2: ", len(s2))
 	fmt.Println("cap s2: ", cap(s2))

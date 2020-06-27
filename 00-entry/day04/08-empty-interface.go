@@ -12,6 +12,8 @@ type Teacher8 struct {
 //空接口 interface{} 类似于c语言中的void*
 //任何类型都实现了空接口，因此空接口可以存储任意类型
 
+//空接口(interface{})不包含任何的方法，正因为如此，所有的类型都实现了空接口，
+//因此空接口可以存储任意类型的数值。它有点类似于C语言的void *类型。
 func MyPrint(args ...interface{}) {
 	fmt.Println(args)
 }
@@ -35,7 +37,9 @@ func main() {
 	//类型判断
 	for index, data := range i {
 		fmt.Println(reflect.TypeOf(data))
-
+		//	comma-ok断言
+		//Go语言里面有一个语法，可以直接判断是否是该类型的变量： value, ok = element.(T)，
+		//这里value就是变量的值，ok是一个bool类型，element是interface变量，T是断言的类型。
 		if value, ok := data.(int); ok == true {
 			fmt.Printf("i[%d] is int; value=%d\n", index, value)
 		} else if value, ok := data.(string); ok == true {
@@ -47,6 +51,7 @@ func main() {
 	}
 
 	for index, data := range i {
+		//switch value := element.(type)
 		switch value := data.(type) {
 		case int:
 			fmt.Printf("i[%d] is int; value=%d\n", index, value)

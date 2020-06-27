@@ -4,6 +4,20 @@ import (
 	"fmt"
 )
 
+/*
+//student01只能在本文件件引用，因为首字母小写
+type student01 struct {
+    Id   int
+    Name string //成员首字母大写 相当于public
+}
+
+//Student02可以在任意文件引用，因为首字母大写
+type Student02 struct {
+    Id   int
+    name string //成员首字母小写 相当于private
+}
+*/
+
 type Student2 struct {
 	id      int
 	name    string
@@ -22,7 +36,9 @@ func testStruct2(s *Student2) {
 }
 
 func main() {
+	//p.成员 和(*p).成员 操作是等价的
 	var s Student2
+	//s=nil //error
 	//操作成员，点操作符.
 	s.name = "杨幂"
 	s.age = 32
@@ -32,6 +48,7 @@ func main() {
 
 	var s2 Student2
 	var s3 = &s2
+	//s3=nil 只有指针才可以赋为nil
 	//s3.name (*s3).name 完全等价
 	s3.name = "刘恺威"
 	s3.age = 42
@@ -59,7 +76,7 @@ func main() {
 	s9 = s8
 	fmt.Println("s9: ", s9)
 
-	//结构体作函数参数是值传递
+	//!!!!!!!!!!!!!!结构体作函数参数是值传递
 	testStruct(s9)
 	fmt.Println(s9)
 	testStruct2(&s9)

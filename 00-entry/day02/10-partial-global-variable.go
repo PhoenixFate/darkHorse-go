@@ -6,17 +6,16 @@ import "fmt"
 var global10 int = 20
 
 func main() {
-
+	//作用域
 	{
 		a := 10
 		fmt.Println("a=", a)
 	}
 	{
-		a := 10
+		a := 20
 		fmt.Println("a=", a)
 	}
 	//fmt.Println("a=",a)
 	fmt.Println("global: ", global10)
-
 	fmt.Println("10 局部变量")
 }

@@ -15,12 +15,20 @@ func (temp long) Add02(b int) int {
 	return int(temp) + b
 }
 
+func (temp *long) Add03(b int) int {
+	return int(*temp) + b
+}
+
 func main() {
 	var result int
 	result = Add01(23, 23) //普通的函数调用方式
 	fmt.Println(result)
 
 	var a long = 10
-	print(a.Add02(20))
+	println(a.Add02(20))
+	var c *long
+	c = &a
+	fmt.Println((*c).Add03(30))
+
 	fmt.Println("03 对象中的函数")
 }

@@ -14,7 +14,7 @@ type Student struct {
 
 func main() {
 	//顺序初始化，每个成员必须初始化
-	var s1 = Student{1, "tom", 0, 22, "中国大陆"}
+	var s1 Student = Student{1, "tom", 0, 22, "中国大陆"}
 	fmt.Println(s1)
 
 	//指定成员初始化, 没有初始化的，默认为0

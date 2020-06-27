@@ -8,7 +8,7 @@ func main() {
 	//1.iota常量自动生成器，每一行，自动加1
 	//2.iota给常量赋值使用
 	const (
-		a = iota
+		a = 10
 		b = iota
 		c = iota
 	)

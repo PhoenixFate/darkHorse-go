@@ -17,5 +17,5 @@ func main() {
 	d := false
 	fmt.Printf("d type: %T\n", d)
 	fmt.Println("d= ", d)
-
+	fmt.Printf("bool int:%v\n", d)
 }

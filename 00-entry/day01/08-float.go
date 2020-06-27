@@ -3,6 +3,12 @@ package main
 import "fmt"
 
 func main() {
+	var v1 uint32
+	v1 = 32
+	fmt.Printf("v1 type: %T\n", v1)
+	v2 := 34
+	fmt.Printf("v2 type: %T\n", v2)
+
 	fmt.Println("08")
 
 	var f1 float32

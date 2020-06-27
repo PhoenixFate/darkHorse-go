@@ -11,7 +11,6 @@ func main() {
 	a = 111
 	b = 222
 
-	fmt.Println("08 defer 和匿名函数")
 }
 
 func main81() {

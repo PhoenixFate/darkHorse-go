@@ -30,6 +30,10 @@ func whoSayHello(i Human) {
 }
 
 func main() {
+
+	//	接⼝命名习惯以 er 结尾
+	//	接口只有方法声明，没有实现，没有数据字段
+
 	var i Human
 	s1 := &Student5{111}
 	i = s1

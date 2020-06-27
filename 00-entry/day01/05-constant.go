@@ -24,7 +24,6 @@ func main() {
 	e1, e2 = 10, 32.2
 	fmt.Printf("e1: %d; e2: %f\n", e1, e2)
 
-	//new
 	var (
 		f1 int
 		f2 float64
@@ -39,12 +38,16 @@ func main() {
 	)
 	fmt.Printf("g1: %d; g2: %f\n", g1, g2)
 
+	//常量的多重赋值
+	const u, v = 3, 4
+	//常量组
 	const (
 		i1 int     = 30
 		i2 float64 = 56.34
 	)
 	fmt.Printf("i1:%d; i2:%f\n", i1, i2)
 
+	//常量组
 	//自动推导类型
 	const (
 		j1 = 30

@@ -6,8 +6,9 @@ type Human7 interface {
 	sayHello()
 }
 
+//如果一个interface1作为interface2的一个嵌入字段，那么interface2隐式的包含了interface1里面的方法。
 type Person7 interface {
-	Human7
+	Human7 ////这里像写了SayHi()一样
 	sing()
 }
 

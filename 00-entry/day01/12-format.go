@@ -8,7 +8,7 @@ func main() {
 
 	//%T
 	a := 10
-	b := 3.24
+	b := 3.249
 	c := 'c'
 	d := "sfs"
 	fmt.Printf("a:%T; b:%T; c:%T; d:%T\n", a, b, c, d)

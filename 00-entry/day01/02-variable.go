@@ -18,9 +18,17 @@ func main() {
 	fmt.Printf("b= %d, c= %d\n", b, c)
 	fmt.Printf("xxx\n")
 
+	var (
+		dd int
+		ee float32
+	)
+	fmt.Printf("dd=%d, ee=%f\n", dd, ee)
+
 	//5.变量初始化
 	var d int = 30
 	fmt.Println(d)
+	var g = 50.2
+	fmt.Println(g)
 
 	//6.自动推导类型，必须初始化   !!!!!!!!!!!!!!!!!!!!!!!!
 	e := 50

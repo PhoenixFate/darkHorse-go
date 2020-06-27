@@ -12,7 +12,7 @@ func main() {
 
 	arr := []int{12, 22, 32, 42}
 	fmt.Println(arr)
-	for data := range arr {
+	for _, data := range arr {
 		fmt.Println(data)
 	}
 

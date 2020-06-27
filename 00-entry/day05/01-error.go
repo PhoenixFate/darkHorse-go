@@ -13,6 +13,7 @@ func MyDivide(a, b int) (result int, resultError error) {
 }
 
 func main() {
+	fmt.Println("-----------------------------")
 	error1 := fmt.Errorf("%s", "this is error 1")
 
 	fmt.Println("error1: ", error1)

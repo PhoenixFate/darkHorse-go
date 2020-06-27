@@ -3,8 +3,6 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("10")
-
 	var str1 string
 	str1 = "abc"
 	fmt.Println(str1)

@@ -6,6 +6,11 @@ func MyAdd(a int, b int) int {
 	return a + b
 }
 
+//不支持函数同名但 参数不同
+func MyAddMore(a int, b int, c int) int {
+	return a + b + c
+}
+
 func MyMinus(a int, b int) int {
 	return a - b
 }

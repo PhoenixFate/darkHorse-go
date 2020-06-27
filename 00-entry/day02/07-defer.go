@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-func test71() {
-	fmt.Println(1 / 0)
+func test71(a int) {
+	fmt.Println(1 / a)
 }
 
 func main() {
@@ -14,7 +14,7 @@ func main() {
 	defer fmt.Println("b")
 
 	//如果调用的函数内部发送错误，其他defer依然会执行
-	defer test71()
+	defer test71(0)
 
 	defer fmt.Println("c")
 

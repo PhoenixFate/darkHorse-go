@@ -5,6 +5,13 @@ import "fmt"
 //默认函数名首字母小写：私有函数
 //默认函数名首字母大写：公有函数
 
+//不支持默认参数
+//返回值可以只有类型没有变量名
+//func FuncName(/*参数列表*/) (o1 type1, o2 type2/*返回类型*/) {
+//	//函数体
+//	return v1, v2 //返回多个值
+//}
+
 //无参数、无返回值
 func MyFunction1() {
 	a := 666
@@ -39,7 +46,7 @@ func MyFunction6(a, b int) (int, int) {
 	return a, b
 }
 
-//go推荐到多个返回值到写法
+//go推荐到多个返回值的写法
 func MyFunction9() (a, b, c int) {
 	a, b, c = 111, 222, 333
 	return
@@ -68,6 +75,17 @@ func test2(args ...int) {
 
 func test3(args ...int) {
 	fmt.Println("test3: ", args)
+}
+
+//官方建议：最好命名返回值，因为不命名返回值，虽然使得代码更加简洁了，但是会造成生成的文档可读性差
+func Test02() (value int) { //方式2, 给返回值命名
+	value = 250
+	return value
+}
+
+func Test03() (value int) { //方式3, 给返回值命名
+	value = 250
+	return
 }
 
 func main() {

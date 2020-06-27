@@ -7,7 +7,6 @@ import "time"
 func main() {
 	fmt.Println(time.Now().Unix())
 	fmt.Println(time.Now().UnixNano())
-
 	rand.Seed(time.Now().Unix())
 	a := [10]int{}
 	for i := 0; i < len(a); i++ {
