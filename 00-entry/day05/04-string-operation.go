@@ -12,6 +12,7 @@ func main() {
 
 	//join
 	s := []string{"abc", "bcd", "123"}
+	//strings.Join 如果连接符为空，即可以把所有数组元素拼接起来
 	fmt.Println("join: ", strings.Join(s, "-"))
 
 	//index

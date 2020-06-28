@@ -5,6 +5,7 @@ import "errors"
 
 func MyDivide(a, b int) (result int, resultError error) {
 	if b == 0 {
+		//errors.New() 返回一个error对象
 		resultError = errors.New("除数不能为0")
 	} else {
 		result = a / b
@@ -14,10 +15,11 @@ func MyDivide(a, b int) (result int, resultError error) {
 
 func main() {
 	fmt.Println("-----------------------------")
+	//fmt.Errorf 返回一个error对象
 	error1 := fmt.Errorf("%s", "this is error 1")
-
 	fmt.Println("error1: ", error1)
 
+	//errors.New() 返回一个error对象
 	error2 := errors.New("this is error2")
 	fmt.Println("error2: ", error2)
 

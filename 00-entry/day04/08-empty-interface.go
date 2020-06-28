@@ -51,6 +51,7 @@ func main() {
 	}
 
 	for index, data := range i {
+		//fmt.Println( data.(type))  //element.(type) 只能放在switch中
 		//switch value := element.(type)
 		switch value := data.(type) {
 		case int:
