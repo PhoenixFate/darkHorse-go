@@ -16,6 +16,10 @@ func testParameter(t Test) {
 	fmt.Printf("name address: %p\n", &t.name)
 }
 
+func testStringSlice(s []string) {
+	fmt.Printf("test string slice: %T\n", s)
+}
+
 func main() {
 	b := make([]byte, 10)
 	b[0] = 'a'
@@ -43,5 +47,11 @@ func main() {
 	fmt.Printf("name address: %p\n", &t.name)
 	testParameter(t)
 
+	s := "string"
+	fmt.Printf("s type:%s %T\n", s, s)
+	fmt.Printf("s[:] type:%s %T\n", s, s[1:len(s)-1])
+	ss := s[:]
+	fmt.Printf("ss type: %s %T", ss, ss)
+	//testStringSlice(ss[:])
 	//log.Panic("log panic test")
 }
